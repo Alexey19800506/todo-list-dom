@@ -3,94 +3,29 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <script>
-        /*if (!Array.isArray(array)) {return null;}*/
-        const createLogger = () => {
-            let result = [];
-
-            function warn(str) {
-                let resWarn = {
-                    message: str,
-                    dateTime: new Date(),
-                    type: 'warn'
-                };
-                result.push(resWarn);
-                return result;
-            }
-
-            function error(str) {
-                let resError = {
-                    message: str,
-                    dateTime: new Date(),
-                    type: 'error'
-                };
-                result.push(resError);
-                return result;
-            }
+    <h1 class="title">Todo List</h1>
+    <main class="todo-list">
+        <div class="actions">
+            <input class="task-input" type="text" />
+            <button class="btn create-task-btn">Create</button>
+        </div>
+        <ul class="list">
+            <!-- Элементы списка должны генерироваться и добавлятся на страницу с помощью JavaScript -->
+            <li class="list__item">
+                <input type="checkbox" class="list__item-checkbox" /> Buy milk
+            </li>
+            <!-- ... -->
 
 
-            function log(str) {
-                let resLog = {
-                    message: str,
-                    dateTime: new Date(),
-                    type: 'log'
-                };
-                result.push(resLog);
-                return result;
-            }
-
-            function getRecords(type) {
-                if (type === 'warn') {
-                    return result.filter(arr => (arr.type === 'warn')).sort((a, b) => b.dateTime - a.dateTime).reverse();
-                } else if (type === 'log') {
-                    return result.filter(arr => (arr.type === 'log')).sort((a, b) => b.dateTime - a.dateTime).reverse();
-                } else if (type === 'error') {
-                    return result.filter(arr => (arr.type === 'error')).sort((a, b) => b.dateTime - a.dateTime).reverse();
-                } else if (type === 'warn') {
-                    return result.filter(arr => (arr.type === 'warn')).reverse();
-                } else if (type === undefined) {
-                    return result.sort((a, b) => a.dateTime - b.dateTime).reverse();
-                }
-            }
-
-            return {
-                warn,
-                error,
-                log,
-                getRecords
-            }
-        };
-
-        // examples
-        const logger1 = createLogger();
-        logger1.log('User logged in');
-
-        logger1.warn('User is tring to ented restricted page');
-        logger1.log('User logged out');
-
-        logger1.error('Unexpected error on the site');
-
-        console.log(logger1.getRecords()); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }, { message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User is tring to ented restricted page', type: 'warn', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
-        console.log(logger1.getRecords('log')); // ===> [{ message: 'User logged out', type: 'log', dateTime: Date }, { message: 'User logged in', type: 'log', dateTime: Date }]
-        logger1.getRecords('error'); // ===> [{ message: 'Unexpected error on the site', type: 'error', dateTime: Date }]
-        logger1.getRecords('warn'); // ===> [{ message: 'User is tring to ented restricted page', type: 'warn', dateTime: Date }]
-
-        const logger2 = createLogger();
-        logger2.warn('Opps, something is happenning');
-        console.log(logger2.getRecords('error')); // ===> []
-        console.log(logger2.getRecords('warn')); // ===> [{ message: 'Opps, something is happenning', type: 'warn', dateTime: Date }]
-        console.log(logger2.getRecords()); // ===> [{ message: 'Opps, something is happenning', type: 'warn', dateTime: Date }]
-
-        const logger3 = createLogger();
-        console.log(logger3.getRecords('error')); // ===> []
-        console.log(logger3.getRecords()); // ===> []
+        </ul>
+    </main>
+    <script src="index.js">
     </script>
 </body>
 
