@@ -1,7 +1,6 @@
 const tasksList = [
     { text: 'Pick up Tom from airport', done: false },
     { text: 'Visit party', done: false },
-    { text: 'Visit doctor', done: true },
     { text: 'Visit meat', done: true },
 ];
 
@@ -24,3 +23,6 @@ const renderTasks = listItems => {
     listElem.append(...listItemElems);
 };
 renderTasks(tasksList);
+const elem = document.body.children[1].children[1].children[1].firstElementChild;
+elem.checked = true;
+const elem1 = document.body.childNodes[2];
