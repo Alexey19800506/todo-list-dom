@@ -23,5 +23,5 @@ const renderTasks = listItems => {
     listElem.append(...listItemElems);
 };
 renderTasks(tasksList);
-const elem1 = document.body.children[1].children[1].children[1].firstElementChild;
-elem1.checked = true;
+const elem = document.body.children[1].children[1].children[1].firstElementChild;
+elem.checked = true;
