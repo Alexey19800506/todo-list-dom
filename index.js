@@ -23,6 +23,7 @@ const renderTasks = listItems => {
             return listItemElem;
         });
     listElem.append(...listItemElems);
+
 };
 renderTasks(tasksList);
 const elem1 = document.body.children[1].children[1].children[0];
