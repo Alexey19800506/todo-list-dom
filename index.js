@@ -25,4 +25,3 @@ const renderTasks = listItems => {
 renderTasks(tasksList);
 const elem = document.body.children[1].children[1].children[1].firstElementChild;
 elem.checked = true;
-const elem1 = document.body.childNodes[2];
