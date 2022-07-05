@@ -1,4 +1,4 @@
- const tasksList = [
+export const task = [
     { text: 'Buy milk', done: false },
     { text: 'Pick up Tom from airport', done: false },
     { text: 'Visit party', done: false },
@@ -6,9 +6,9 @@
     { text: 'Buy meat', done: true },
 ];
 
-const renderTasks = listItems => {
+const renderTasks = tasksList => {
     const listElem = document.querySelector('.list');
-    const listItemElems = listItems.sort((a, b) => a.done - b.done)
+    const listItemElems = tasksList.sort((a, b) => a.done - b.done)
         .map(({ text, done }) => {
             const listItemElem = document.createElement('li');
             listItemElem.classList.add('list__item');
@@ -24,4 +24,4 @@ const renderTasks = listItems => {
         });
     listElem.append(...listItemElems);
 };
-renderTasks(tasksList);
+renderTasks(task);
