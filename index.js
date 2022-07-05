@@ -25,7 +25,3 @@ const renderTasks = listItems => {
     listElem.append(...listItemElems);
 };
 renderTasks(tasksList);
-const elem1 = document.body.children[1].children[1].children[0];
-elem1.remove();
-const elem2 = document.body.children[1].children[1].children[0];
-elem2.remove();
