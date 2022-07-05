@@ -1,4 +1,4 @@
-const tasksList = [
+export const tasksList = [
     { text: 'Buy milk', done: false },
     { text: 'Pick up Tom from airport', done: false },
     { text: 'Visit party', done: false },
