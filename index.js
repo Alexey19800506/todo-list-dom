@@ -1,6 +1,6 @@
 'use strict';
 
-export const task = [
+export const tasks = [
     { text: 'Buy milk', done: false },
     { text: 'Pick up Tom from airport', done: false },
     { text: 'Visit party', done: false },
@@ -26,4 +26,4 @@ const renderTasks = tasksList => {
         });
     listElem.append(...listItemElems);
 };
-renderTasks(task);
+renderTasks(tasks);
